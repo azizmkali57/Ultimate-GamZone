@@ -7,39 +7,28 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const setups = [
   {
     id: 1,
-    image: "/images/high_end_pc.png",
-    title: "HIGH END PC",
-    specs: ["RTX 4090", "i9 13900K", "240Hz"],
+    image: "/images/ps5.png",
+    title: "PLAYSTATION 5",
+    specs: ["4K Gaming", "120 FPS", "DualSense"],
+    fit:"fill",
   },
   {
     id: 2,
-    image: "/images/playstation.png",
-    title: "PLAYSTATION 5",
-    specs: ["Latest Console", "4K 120FPS"],
+    image: "/images/ps2.png",
+    title: "PLAYSTATION 2",
+    specs: ["Classic Games", "Retro Console", "Multiplayer"],
   },
   {
     id: 3,
-    image: "/images/xbox.png",
-    title: "XBOX SERIES X",
-    specs: ["Next Gen", "4K 120FPS"],
+    image: "/images/Snooker.png",
+    title: "SNOOKER",
+    specs: ["Professional Table", "Premium Cues", "Tournament Setup"],
   },
   {
     id: 4,
-    image: "/images/racing.png",
-    title: "RACING SIMULATOR",
-    specs: ["Thrustmaster", "Logitech"],
-  },
-  {
-    id: 5,
-    image: "/images/vr.png",
-    title: "VR EXPERIENCE",
-    specs: ["Full Immersion", "Motion Tracked"],
-  },
-  {
-    id: 6,
-    image: "/images/vr.png",
-    title: "NINTENDO SWITCH",
-    specs: ["Handheld Mode", "Party Games"],
+    image: "/images/Carrom.png",
+    title: "CARROM",
+    specs: ["Professional Board", "Premium Coins", "Smooth Finish"],
   },
 ];
 
@@ -188,7 +177,7 @@ const OurSetups = () => {
         </div>
       ) : (
         /* ── Grid layout — used whenever there are 5 or fewer setups ── */
-        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-4">
           {setups.map((setup) => (
             <SetupCard key={setup.id} setup={setup} />
           ))}

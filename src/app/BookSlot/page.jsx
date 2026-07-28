@@ -20,6 +20,9 @@ import {
   Ticket,
   Sparkles,
   RotateCcw,
+  Disc3,
+  CircleDot, 
+  Trophy,
 } from "lucide-react";
 
 const LIME = "#CBFF3D";
@@ -27,11 +30,38 @@ const LIME = "#CBFF3D";
 const OWNER_WHATSAPP = "919074743403";
 
 const SETUPS = [
-  { id: "pc", name: "High-End PC", tag: "RTX 4090 · 240Hz", icon: Monitor, multiplier: 1, capacity: 8 },
-  { id: "ps5", name: "PlayStation 5", tag: "4K · 120FPS", icon: Gamepad2, multiplier: 0.85, capacity: 4 },
-  { id: "xbox", name: "Xbox Series X", tag: "4K · 120FPS", icon: Gamepad2, multiplier: 0.85, capacity: 4 },
-  { id: "racing", name: "Racing Simulator", tag: "Full Motion Rig", icon: Car, multiplier: 1.4, capacity: 2 },
-  { id: "vr", name: "VR Experience", tag: "Full Immersion", icon: Headphones, multiplier: 1.6, capacity: 2 },
+  {
+    id: "ps5",
+    name: "PlayStation 5",
+    tag: "Latest Console",
+    icon: Gamepad2,
+    multiplier: 0.85,
+    capacity: 4,
+  },
+  {
+    id: "ps2",
+    name: "PlayStation 2",
+    tag: "Classic Console",
+    icon: Disc3,
+    multiplier: 0.75,
+    capacity: 4,
+  },
+  {
+    id: "snooker",
+    name: "Snooker",
+    tag: "Professional Table",
+    icon: Trophy,
+    multiplier: 1.2,
+    capacity: 2,
+  },
+  {
+    id: "carrom",
+    name: "Carrom",
+    tag: "Indoor Classic",
+    icon: CircleDot,
+    multiplier: 1.0,
+    capacity: 4,
+  },
 ];
 
 const DURATIONS = [
@@ -42,7 +72,7 @@ const DURATIONS = [
   { id: "full", label: "Full Day", hours: 12, price: 599, note: "Unlimited Fun" },
 ];
 
-const GAMES = ["Valorant", "EA FC 24", "GTA V", "Forza Horizon 5", "Call of Duty: MW3", "Apex Legends", "Other / Any"];
+const GAMES = ["WWE 2K26", "EA FC 24", "GTA V", "NEED FOR SPEED", " BLACK MYTH: WUKONG", "MORTAL KOMBAT", "Other / Any"];
 
 // Venue hours: 10:00 to 24:00 (midnight), hourly start slots
 const OPEN_HOUR = 10;
@@ -78,7 +108,7 @@ function Step({ number, title, subtitle, children }) {
 }
 
 export default function BookSlotPage() {
-  const [setupType, setSetupType] = useState("pc");
+  const [setupType, setSetupType] = useState("ps5");
   const [game, setGame] = useState(GAMES[0]);
   const [date, setDate] = useState(todayISO());
   const [startHour, setStartHour] = useState(null);
@@ -94,7 +124,7 @@ export default function BookSlotPage() {
 
   const selectedSetup = SETUPS.find((s) => s.id === setupType);
   const selectedDuration = DURATIONS.find((d) => d.id === duration);
-  const showGamePicker = setupType === "pc" || setupType === "ps5" || setupType === "xbox";
+  const showGamePicker = setupType === setupType === "ps5" || setupType === "ps2";
   const endHour = startHour !== null ? startHour + selectedDuration.hours : null;
 
   const pricing = useMemo(() => {

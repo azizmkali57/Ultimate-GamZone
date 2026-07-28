@@ -17,8 +17,7 @@ const plans = [
 const badges = [
   { id: 1, title: "Instant Booking",   sub: "Book your slot in seconds"       },
   { id: 2, title: "No Hidden Charges", sub: "What you see is what you pay"     },
-  { id: 3, title: "High End Setups",   sub: "Top of the line PCs & Consoles"  },
-  { id: 4, title: "Flexible & Easy",   sub: "Cancel or reschedule anytime"    },
+  { id: 3, title: "Flexible & Easy",   sub: "Cancel or reschedule anytime"    },
 ];
 
 /* ── Badge Icons as Components ── */
